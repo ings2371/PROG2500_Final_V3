@@ -13,6 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\console.png" />
+    <None Remove="Assets\director-chair.png" />
+    <None Remove="Assets\video-camera.png" />
     <None Remove="Styles\NewFile1.txt" />
   </ItemGroup>
 
@@ -34,7 +37,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\" />
+    <Resource Include="Assets\console.png" />
+    <Resource Include="Assets\director-chair.png" />
+    <Resource Include="Assets\video-camera.png" />
   </ItemGroup>
 
 </Project>

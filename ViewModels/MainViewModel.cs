@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using IMDB_final_Project.Commands;
 using IMDB_final_Project.Services;
 using System.Windows.Input;
+using System.Windows;
 
 namespace IMDB_final_Project.ViewModels
 {
@@ -39,7 +40,8 @@ namespace IMDB_final_Project.ViewModels
 
         public ICommand GoBackCommand => new RelayCommand(_ => _navigationService.GoBack());
 
-
+        // Command to close the application
+        public ICommand CloseAppCommand => new RelayCommand(_ => Application.Current.Shutdown());
 
         public event PropertyChangedEventHandler? PropertyChanged;
         private void OnPropertyChanged(string propertyName)

@@ -17,13 +17,12 @@
 
             <!-- Left Filter Panel -->
             <StackPanel Grid.Column="0" Background="#888888" Height="194" VerticalAlignment="Top">
+                <TextBlock Text="Filter Search:" Foreground="White" FontWeight="Bold" Margin="0,0,0,10"/>
                 <TextBox Height="25" Margin="0,0,0,10" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBlock Text="Filter" Foreground="White" FontWeight="Bold" Margin="0,0,0,10"/>
-                <Button Content="" Background="White" Margin="0,0,0,5"/>
-                <Button Content="" Background="White" Margin="0,0,0,5"/>
-                <Button Content="" Background="White" Margin="0,0,0,5"/>
-                <Button Content="" Background="White" Margin="0,0,0,5"/>
+                <Image Height="120" Width="120" Source="{StaticResource Console}" />
             </StackPanel>
+
+<!--<a href="https://www.flaticon.com/free-icons/joystick" title="joystick icons">Joystick icons created by Good Ware - Flaticon</a>-->
 
             <!-- Content Panel -->
             <Grid Grid.Column="1" Margin="20,0,0,0">
@@ -43,7 +42,7 @@
                             <Border Style="{StaticResource MovieCardStyle}" Margin="5">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="50"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="150"/>
                                     </Grid.ColumnDefinitions>
@@ -54,13 +53,13 @@
                                     <!-- Title & fileType -->
                                     <StackPanel Grid.Column="1" Margin="10,0" VerticalAlignment="Center">
                                         <TextBlock Text="{Binding PrimaryTitle}" Style="{StaticResource MovieTextStyle}"/>
-                                        <TextBlock Text="aa" Style="{StaticResource MovieTextStyle}" Margin="0"/>
+                                        <TextBlock Text="{Binding DirectorName}" Style="{StaticResource MovieTextStyle}" Margin="0"/>
                                     </StackPanel>
 
                                     <!-- Release year and isPorn? -->
                                     <StackPanel Grid.Column="2" Margin="0,10" VerticalAlignment="Center">
                                         <TextBlock Text="{Binding StartYear, StringFormat='Year: {0}'}" Style="{StaticResource MovieTextStyle}" Margin="0,0,0,5"/>
-                                        <TextBlock Text="{Binding IsAdultStatus, StringFormat='Adult Film? {0}'}" Style="{StaticResource MovieTextStyle}"/>
+                                        <TextBlock Text="{Binding IsAdultStatus, StringFormat='Adult Game? {0}'}" Style="{StaticResource MovieTextStyle}"/>
                                     </StackPanel>
                                 </Grid>
                             </Border>

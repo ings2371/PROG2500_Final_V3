@@ -11,6 +11,14 @@
                 <ResourceDictionary Source="Styles/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
+            <!-- images we used-->
+            <BitmapImage x:Key="Cam" UriSource="/Assets/video-camera.png" />
+            <!--https://www.flaticon.com/free-icons/cinema%22-->
+            <BitmapImage x:Key="Console" UriSource="/Assets/console.png" />
+            <!--https://www.flaticon.com/free-icons/actor%22-->
+            <BitmapImage x:Key="Direct" UriSource="/Assets/director-chair.png" />
+            <!--https://www.flaticon.com/free-icons/joystick%22-->
+
             <DataTemplate DataType="{x:Type vm:HomeViewModel}">
                 <v:HomeView/>
             </DataTemplate>

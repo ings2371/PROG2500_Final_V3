@@ -5,23 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IMDB_final_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="IMDB" Height="470" Width="800">
+    <Grid Background="#F0F0F0">
         <!--Navigation menu-->
         <StackPanel Orientation="Vertical" Grid.Row="0" Margin="0,7,0,-10">
-            <Menu>
+            <Menu Background="Gray">
                 <MenuItem Header="File">
-                    <MenuItem Header="Exit"/>
+                    <MenuItem Header="Exit" Command="{Binding CloseAppCommand}"/>
                 </MenuItem>
                 <MenuItem Header="Home" Command="{Binding NavigateHomeCommand}" />
                 <MenuItem Header="Movies" Command="{Binding NavigateMovieCommand}" />
-                <MenuItem Header="Actors" Command="{Binding NavigateActorCommand}" />
+                <MenuItem Header="Industry" Command="{Binding NavigateActorCommand}" />
                 <MenuItem Header="Games" Command="{Binding NavigateGameCommand}" />
 
             </Menu>
-            <TextBlock Text="IMDB"></TextBlock>
         </StackPanel>
-        <StackPanel Margin="0,44,0,0">
+        <StackPanel Height="403" VerticalAlignment="Top" Margin="0,31,0,0">
             <ContentControl Content="{Binding CurrentViewModel}">
 
             </ContentControl>

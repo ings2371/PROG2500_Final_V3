@@ -69,18 +69,22 @@ namespace IMDB_final_Project
 
                     var topTitles = dbContext.Titles
                         .Include(t => t.Rating)
+                        .Include(t => t.Principals)
+                        .ThenInclude(p => p.Name)
                         .Where(t => t.Rating != null && (t.IsAdult == false || t.IsAdult == null))
                         .OrderByDescending(t => t.Rating.AverageRating)
-                        .Take(10)
+                        .Take(3)
                         .ToList();
 
-                    var titleRatings = dbContext.Titles.Include(t => t.Rating).ToList();
+                    var titleRatings = dbContext.Titles.Include(t => t.Rating).Include(t => t.Principals)
+                    .ThenInclude(p => p.Name).ToList();
 
                     var videoGames = dbContext.Titles
                         .Include(t => t.Rating)
-                        .Where(t => t.TitleType == "videoGame" && (t.IsAdult == false || t.IsAdult == null))
-                        .OrderByDescending(t => t.Rating!.AverageRating)
-                        .Take(50)
+                        .Include(t => t.Principals)
+                            .ThenInclude(p => p.Name)
+                        .Where(t => t.TitleType == "videoGame")
+                        .OrderByDescending(t => t.Rating.AverageRating)
                         .ToList();
 
                     homeViewModel.Titles = new ObservableCollection<Title>(topTitles);
