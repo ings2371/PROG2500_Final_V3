@@ -18,15 +18,14 @@ using Microsoft.Extensions.DependencyInjection;
 namespace IMDB_final_Project.Views
 {
     /// <summary>
-    /// Interaction logic for SearchView.xaml
+    /// Interaction logic for GameView.xaml
     /// </summary>
-    public partial class SearchView : UserControl
+    public partial class GameView : UserControl
     {
-        public SearchView()
+        public GameView()
         {
             InitializeComponent();
-            DataContext = ((App)Application.Current).ServiceProvider.GetService<SearchViewModel>();
-
+            DataContext = ((App)Application.Current).ServiceProvider.GetService<GameViewModel>();
         }
     }
 }

@@ -23,8 +23,8 @@
                 <v:ActorView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type vm:SearchViewModel}">
-                <v:SearchView/>
+            <DataTemplate DataType="{x:Type vm:GameViewModel}">
+                <v:GameView/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

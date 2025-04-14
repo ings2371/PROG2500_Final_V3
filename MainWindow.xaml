@@ -16,7 +16,7 @@
                 <MenuItem Header="Home" Command="{Binding NavigateHomeCommand}" />
                 <MenuItem Header="Movies" Command="{Binding NavigateMovieCommand}" />
                 <MenuItem Header="Actors" Command="{Binding NavigateActorCommand}" />
-                <MenuItem Header="Search" Command="{Binding NavigateSearchCommand}" />
+                <MenuItem Header="Games" Command="{Binding NavigateGameCommand}" />
 
             </Menu>
             <TextBlock Text="IMDB"></TextBlock>

@@ -50,7 +50,7 @@ namespace IMDB_final_Project
             services.AddSingleton<HomeViewModel>();
             services.AddSingleton<ActorViewModel>();
             services.AddSingleton<MovieViewModel>();
-            services.AddSingleton<SearchViewModel>();
+            services.AddSingleton<GameViewModel>();
 
             //Register other services and viewmodels here
         }
@@ -65,22 +65,28 @@ namespace IMDB_final_Project
                     var movieViewModel = scope.ServiceProvider.GetRequiredService<MovieViewModel>();
                     var homeViewModel = scope.ServiceProvider.GetRequiredService<HomeViewModel>();
                     var actorViewModel = scope.ServiceProvider.GetRequiredService<ActorViewModel>();
+                    var gameViewModel = scope.ServiceProvider.GetRequiredService<GameViewModel>();
 
                     var topTitles = dbContext.Titles
                         .Include(t => t.Rating)
-                        .Where(t => t.Rating != null && (t.IsAdult == false || t.IsAdult == null)) // exclude adult
+                        .Where(t => t.Rating != null && (t.IsAdult == false || t.IsAdult == null))
                         .OrderByDescending(t => t.Rating.AverageRating)
                         .Take(10)
                         .ToList();
 
                     var titleRatings = dbContext.Titles.Include(t => t.Rating).ToList();
 
+                    var videoGames = dbContext.Titles
+                        .Include(t => t.Rating)
+                        .Where(t => t.TitleType == "videoGame" && (t.IsAdult == false || t.IsAdult == null))
+                        .OrderByDescending(t => t.Rating!.AverageRating)
+                        .Take(50)
+                        .ToList();
 
                     homeViewModel.Titles = new ObservableCollection<Title>(topTitles);
-                    movieViewModel.Titles = new ObservableCollection<Title>(dbContext.Titles.ToList());
                     movieViewModel.Titles = new ObservableCollection<Title>(titleRatings);
                     actorViewModel.Names = new ObservableCollection<Name>(dbContext.Names.Take(1000).ToList());
-
+                    gameViewModel.Games = new ObservableCollection<Title>(videoGames);
                 }
             }
             catch (Exception ex)
@@ -88,6 +94,7 @@ namespace IMDB_final_Project
                 MessageBox.Show($"Startup failed: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
 
     }
 

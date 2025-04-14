@@ -35,7 +35,7 @@ namespace IMDB_final_Project.ViewModels
         public ICommand NavigateHomeCommand => new RelayCommand(_ => _navigationService.NavigateTo<HomeViewModel>());
         public ICommand NavigateActorCommand => new RelayCommand(_ => _navigationService.NavigateTo<ActorViewModel>());
         public ICommand NavigateMovieCommand => new RelayCommand(_ => _navigationService.NavigateTo<MovieViewModel>());
-        public ICommand NavigateSearchCommand => new RelayCommand(_ => _navigationService.NavigateTo<SearchViewModel>());
+        public ICommand NavigateGameCommand => new RelayCommand(_ => _navigationService.NavigateTo<GameViewModel>());
 
         public ICommand GoBackCommand => new RelayCommand(_ => _navigationService.GoBack());
 

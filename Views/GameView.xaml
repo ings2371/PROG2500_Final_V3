@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="IMDB_final_Project.Views.ActorView"
+﻿<UserControl x:Class="IMDB_final_Project.Views.GameView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -33,11 +33,11 @@
                     <RowDefinition Height="*"/>
                     <!-- List -->
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="Movies and Shows" Style="{StaticResource SectionHeader}" Margin="0,0,0,10"/>
+                <TextBlock Grid.Row="0" Text="Video Games" Style="{StaticResource SectionHeader}" Margin="0,0,0,10"/>
 
                 <!-- Movie/Show Card -->
                 <!-- Repeatable Card Template -->
-                <ListView ItemsSource="{Binding FilteredNames}" Grid.Row="1">
+                <ListView ItemsSource="{Binding FilteredGames}" Grid.Row="1">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Border Style="{StaticResource MovieCardStyle}" Margin="5">
@@ -48,28 +48,28 @@
                                         <ColumnDefinition Width="150"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBlock Text="{Binding PrimaryName}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <!-- Rating -->
+                                    <TextBlock Text="{Binding Rating.AverageRating}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
+                                    <!-- Title & fileType -->
                                     <StackPanel Grid.Column="1" Margin="10,0" VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding PrimaryProfession}" Style="{StaticResource MovieTextStyle}"/>
-                                        <TextBlock Text="f" Style="{StaticResource MovieTextStyle}" Margin="0"/>
+                                        <TextBlock Text="{Binding PrimaryTitle}" Style="{StaticResource MovieTextStyle}"/>
+                                        <TextBlock Text="aa" Style="{StaticResource MovieTextStyle}" Margin="0"/>
                                     </StackPanel>
 
+                                    <!-- Release year and isPorn? -->
                                     <StackPanel Grid.Column="2" Margin="0,10" VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding BirthYear}" Style="{StaticResource MovieTextStyle}" Margin="0,0,0,5"/>
-                                        <TextBlock Text="{Binding isDead}" Style="{StaticResource MovieTextStyle}"/>
+                                        <TextBlock Text="{Binding StartYear, StringFormat='Year: {0}'}" Style="{StaticResource MovieTextStyle}" Margin="0,0,0,5"/>
+                                        <TextBlock Text="{Binding IsAdultStatus, StringFormat='Adult Film? {0}'}" Style="{StaticResource MovieTextStyle}"/>
                                     </StackPanel>
                                 </Grid>
                             </Border>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
-
-
-                <!-- Add more <Border> blocks for each item or use data binding -->
             </Grid>
         </Grid>
     </Grid>
 
 </UserControl>
+
