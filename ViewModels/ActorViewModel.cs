@@ -36,6 +36,7 @@ namespace IMDB_final_Project.ViewModels
             }
         }
 
+        //search text for filter
         public string SearchText
         {
             get => _searchText;
@@ -47,6 +48,7 @@ namespace IMDB_final_Project.ViewModels
             }
         }
 
+        //this is the search filter that filters by PrimaryName
         private void FilterNames()
         {
             if (string.IsNullOrWhiteSpace(SearchText))

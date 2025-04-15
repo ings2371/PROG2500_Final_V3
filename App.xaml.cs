@@ -67,18 +67,21 @@ namespace IMDB_final_Project
                     var actorViewModel = scope.ServiceProvider.GetRequiredService<ActorViewModel>();
                     var gameViewModel = scope.ServiceProvider.GetRequiredService<GameViewModel>();
 
+                    //this is getting the top 3 Rated films/games with the top default
                     var topTitles = dbContext.Titles
                         .Include(t => t.Rating)
                         .Include(t => t.Principals)
-                        .ThenInclude(p => p.Name)
+                            .ThenInclude(p => p.Name)
                         .Where(t => t.Rating != null && (t.IsAdult == false || t.IsAdult == null))
                         .OrderByDescending(t => t.Rating.AverageRating)
                         .Take(3)
                         .ToList();
 
+                    //this gets the rating and Principals so we can show the director
                     var titleRatings = dbContext.Titles.Include(t => t.Rating).Include(t => t.Principals)
                     .ThenInclude(p => p.Name).ToList();
 
+                    //this is getting the Ratings, Principals for directors and making sure that the only things that will show are videoGame
                     var videoGames = dbContext.Titles
                         .Include(t => t.Rating)
                         .Include(t => t.Principals)
@@ -90,6 +93,8 @@ namespace IMDB_final_Project
                     homeViewModel.Titles = new ObservableCollection<Title>(topTitles);
                     movieViewModel.Titles = new ObservableCollection<Title>(titleRatings);
                     actorViewModel.Names = new ObservableCollection<Name>(dbContext.Names.Take(1000).ToList());
+                    //only taking a 1000 because when i ran this it was loading all the Actors at once
+                    //which almost cause Noah's computer to break
                     gameViewModel.Games = new ObservableCollection<Title>(videoGames);
                 }
             }

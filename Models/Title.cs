@@ -11,6 +11,7 @@ namespace IMDB_final_Project.Models
 
         public virtual ICollection<Principal> Principals { get; set; } = new List<Principal>();
 
+        //this function gets the director for films and games
         public string DirectorName
         {
             get
@@ -24,27 +25,7 @@ namespace IMDB_final_Project.Models
             }
         }
 
-
-        //public string CastList
-        //{
-        //    get
-        //    {
-        //        var castNames = Names
-        //            .SelectMany(n => n.Principals)
-        //            .Where(p =>
-        //                p.TitleId == TitleId &&
-        //                (p.JobCategory?.ToLower().Contains("actor") == true ||
-        //                 p.Job?.ToLower().Contains("actor") == true))
-        //            .Select(p => p.Name?.PrimaryName)
-        //            .Where(name => !string.IsNullOrWhiteSpace(name))
-        //            .Distinct()
-        //            .Take(5)
-        //            .ToList(); // Force evaluation here
-
-        //        return castNames.Any() ? string.Join(", ", castNames) : "Cast unknown";
-        //    }
-        //}
-
+        //this is a yes or no checker to see if a item isAdult
         public string IsAdultStatus
         {
             get

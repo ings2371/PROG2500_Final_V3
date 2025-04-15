@@ -14,9 +14,9 @@ namespace IMDB_final_Project.ViewModels
 {
     public class HomeViewModel : INotifyPropertyChanged
     {
-        //public ObservableCollection<Title> MostPopularTitles { get; set; } = new();
         private ObservableCollection<Title> _titles;
 
+        //collection of Title
         public ObservableCollection<Title> Titles
         {
             get => _titles;
@@ -27,31 +27,6 @@ namespace IMDB_final_Project.ViewModels
             }
         }
 
-        //public HomeViewModel()
-        //{
-        //}
-
-        //private void LoadMostPopular()
-        //{
-        //    using var context = new ImdbContext(); // Replace with your actual DbContext name
-
-        //    var topTitles = context.Titles
-        //        .Include(t => t.Rating)
-        //        .Include(t => t.Names) // For cast/director names
-        //        .Include(t => t.EpisodeTitle)
-        //        .Include(t => t.TitleAliases)
-        //        .Include(t => t.Genres)
-        //        .Include(t => t.NamesNavigation)
-        //        .Include(t => t.Names1)
-        //        .Include(t => t.EpisodeParentTitles)
-        //        .OrderByDescending(t => t.Rating!.AverageRating)
-        //        .Where(t => t.Rating != null)
-        //        .Take(10)
-        //        .ToList();
-
-        //    Titles = new ObservableCollection<Title>(topTitles);
-        //    OnPropertyChanged(nameof(Titles));
-        //}
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

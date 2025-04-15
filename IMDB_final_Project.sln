@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMDB_final_Project", "IMDB_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMDB_final_Project.Test", "..\IMDB_final_Project.Test\IMDB_final_Project.Test.csproj", "{A951A0D2-4446-4B62-9CD8-9C81CBD70673}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IMDB_Setup", "..\IMDB_Setup\IMDB_Setup.vdproj", "{7F6A754B-A11E-41FA-AF73-28A6E5D66E18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{A951A0D2-4446-4B62-9CD8-9C81CBD70673}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A951A0D2-4446-4B62-9CD8-9C81CBD70673}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A951A0D2-4446-4B62-9CD8-9C81CBD70673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6A754B-A11E-41FA-AF73-28A6E5D66E18}.Debug|Any CPU.ActiveCfg = Debug
+		{7F6A754B-A11E-41FA-AF73-28A6E5D66E18}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
