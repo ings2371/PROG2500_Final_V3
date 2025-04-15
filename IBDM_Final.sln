@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMDB_final_Project", "..\IMDB_final_Project\IMDB_final_Project.csproj", "{96BA0A92-FAB9-429B-8AC0-659D80150566}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMDB_final_Project.Test", "..\IMDB_final_Project.Test\IMDB_final_Project.Test.csproj", "{FFF784F8-89EA-483B-939F-3BA2E3F3DCE8}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IMDB_Setup", "..\IMDB_Setup\IMDB_Setup.vdproj", "{585C111A-615A-4060-9AC7-476C2F8AE3B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96BA0A92-FAB9-429B-8AC0-659D80150566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96BA0A92-FAB9-429B-8AC0-659D80150566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96BA0A92-FAB9-429B-8AC0-659D80150566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96BA0A92-FAB9-429B-8AC0-659D80150566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFF784F8-89EA-483B-939F-3BA2E3F3DCE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFF784F8-89EA-483B-939F-3BA2E3F3DCE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFF784F8-89EA-483B-939F-3BA2E3F3DCE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFF784F8-89EA-483B-939F-3BA2E3F3DCE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{585C111A-615A-4060-9AC7-476C2F8AE3B8}.Debug|Any CPU.ActiveCfg = Debug
+		{585C111A-615A-4060-9AC7-476C2F8AE3B8}.Debug|Any CPU.Build.0 = Debug
+		{585C111A-615A-4060-9AC7-476C2F8AE3B8}.Release|Any CPU.ActiveCfg = Release
+		{585C111A-615A-4060-9AC7-476C2F8AE3B8}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
